@@ -37,7 +37,7 @@ function ENT:dCDamage(pos,damage,dist,angle,dmgtype)
 	end
 end
 
-unction ENT:CheckAngleTo(pos)
+unction ENT:dCAngleTo(pos)
 	local targetang = (pos - self:GetPos() +self:OBBCenter()):Angle()
 	local _x = math.AngleDifference(targetang.x,self:GetAngles().x)
 	local _y = math.AngleDifference(targetang.y,self:GetAngles().y)
@@ -45,12 +45,12 @@ unction ENT:CheckAngleTo(pos)
 	return _return
 end
 
-function ENT:ResetManipulateBoneAngles()
+function ENT:dCResetBoneAngles()
 local _bone = self:LookupBone(bone)
 self:ManipulateBoneAngles(_bone,Angle(-self:ManipulateBoneAngles().x,-self:ManipulateBoneAngles().y,0) )
 end
 
-function ENT:LookAtPosUseBone(bone, pos, limitx, limity, speed, mul)
+function ENT:dCLook(bone, pos, limitx, limity, speed, mul)
 	local mul = mul or 1
 	local _bone = self:LookupBone(bone)
 	local selfpos = self:GetPos() +self:OBBCenter()
