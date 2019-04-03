@@ -15,7 +15,7 @@ function ENT:dCDamage(pos,damage,dist,angle,dmgtype)
 				if v:IsPlayer() then
 					v:ViewPunch(Angle(math.random(-1,1)*damage/3,math.random(-1,1)*damage/3,math.random(-1,1)*damage/3))
 					dmg:SetDamage(_dmg*diff/2)
-				elseif self:GetHitEntity():IsNPC() then
+				elseif v:IsNPC() then
 					dmg:SetDamage(_dmg*diff/2*3)
 				end
 				dmg:SetAttacker(self)
